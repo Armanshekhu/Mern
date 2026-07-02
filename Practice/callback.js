@@ -64,7 +64,7 @@ function getOrders(callback) {
     }, 1000);
 }
 
-function getOrderData(callback) {
+function getOrderData() {
     console.log("7. Getting order data...");
 
     setTimeout(() => {
@@ -82,28 +82,68 @@ function getOrderData(callback) {
 
 //Arrow function 
 
-function sum(a,b) {
-    console.log(a+b);
-}
+// function sum(a,b) {
+//     console.log(a+b);
+// }
 
 // sum(5,10);
 
-const sumArrow = (a,b) => {
-    console.log(a+b);
-}
+// const sumArrow = (a,b) => {
+//     console.log(a+b);
+// }
 
 // sumArrow(5,10);
 
 
-let numbers = [1,2,3,4,5];
+// let numbers = [1,2,3,4,5];
 
-numbers.forEach((number) => {
-    console.log(number);
+// numbers.forEach((number) => {
+//     console.log(number);
+// })
+
+
+// let EvenNumbers = numbers.map((number) => {
+//     return number * 2;
+// });
+
+// console.log(EvenNumbers);
+
+
+function one(callback) {
+    console.log("1. One");
+    setTimeout(() => {
+        console.log("2. Two");
+        callback();
+    }, 2000);
+}
+
+function two(callback) {
+    console.log("3. Three");
+    setTimeout(() => {
+        console.log("4. Four");
+        callback();
+    }, 1000);
+}
+
+function three(callback) {
+    console.log("5. Five");
+    setTimeout(() => {
+        console.log("6. Six");
+        callback();
+    }, 3000);       
+}
+
+function four() {
+    console.log("7. Seven");
+    setTimeout(() => {
+        console.log("8. Eight");
+    }, 4000);
+}
+
+one(() => {
+    two(() => {
+        three(() => {
+            four()
+        })
+    })
 })
-
-
-let EvenNumbers = numbers.map((number) => {
-    return number * 2;
-});
-
-console.log(EvenNumbers);
