@@ -70,7 +70,83 @@ function getOrderData() {
 }
 
 
-login()
-    .then(getUser)
-    .then(getOrders)
-    .then(getOrderData)
+// login()
+//     .then(getUser)
+//     .then(getOrders)
+//     .then(getOrderData)
+
+
+async function test() {
+    return 5;
+}
+
+// test().then(console.log)
+
+function test2() {
+    return Promise.resolve(5);
+}
+
+// test2().then(console.log)
+
+let arr1 = [1,2,3,4,5];
+let arr2 = [6,7,8,9,10];
+
+let mergedArray = [...arr1, ...arr2];
+
+// console.log(mergedArray);
+
+// promise has 4 apis : promise.all, promise.allSettled, promise.race, promise.any
+// promise.all : it takes an array of promises and returns a single promise that resolves when all 
+
+
+function getProducts() {
+
+    return new Promise((resolve, reject) => {
+        let success = false;
+        setTimeout(() => {
+            if(success) {
+                resolve(" Product loaded")
+            } else {
+                reject(" Product not loaded")
+            }
+        },1000)
+    })
+}
+
+function getOffer() {
+
+    return new Promise((resolve, reject) => {
+        let success = false;
+        setTimeout(() => {
+            if(success) {
+                resolve("Offer Received")
+            } else {
+                reject("Offer rejected")
+            }
+        },5000)
+    })
+}
+
+function getCategory() {
+
+    return new Promise((resolve, reject) => {
+        let success = true;
+        setTimeout(() => {
+            if(success) {
+                resolve("Category received")
+            } else {
+                reject("Category not received")
+            }
+        },1000)
+    })
+
+}
+
+
+Promise.any([getProducts(),getCategory(),getOffer()])
+.then(result => {
+    console.log(result)
+})
+.catch(err => {
+    console.log(err)
+});
