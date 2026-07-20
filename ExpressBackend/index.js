@@ -49,3 +49,14 @@ app.get('/search', (req,res) => {
 
 
 app.listen(3000, () => console.log("Server is running at port 3000"));
+
+// Hashing (One-way)
+// -----------------
+// Password  ---> Hash      ✅ Possible
+// Hash      ---> Password  ❌ Not possible (cannot be reversed)
+
+// Encryption (Two-way)
+// --------------------
+// Plain Text ---> Encrypted Text (Ciphertext) ✅ Possible
+// Encrypted Text ---> Plain Text              ✅ Possible (using the key)
+
