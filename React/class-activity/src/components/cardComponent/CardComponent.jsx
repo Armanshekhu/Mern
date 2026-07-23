@@ -1,6 +1,6 @@
-import "./CardComponent.css";
+import './cardComponent.css';
 
-function CardComponent(props) {
+function CourseCard(props) {
 
     return (
         <div className="card">
@@ -13,4 +13,4 @@ function CardComponent(props) {
     )
 }
 
-export default CardComponent;
+export default CourseCard;

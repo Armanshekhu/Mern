@@ -1,4 +1,5 @@
 function Footer() {
+
     return (
         <div>
             <p>This is Footer Component</p>
@@ -6,4 +7,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default Footer;
