@@ -27,10 +27,13 @@ form.addEventListener("submit", (e) => {
     deleteBtn.style.backgroundColor = "black";
     deleteBtn.style.color = "white";
 
+    deleteBtn.addEventListener("click", () => {
+        li.remove();
+    });
+
     li.appendChild(newTitle);
     li.appendChild(newDesc);
     li.appendChild(deleteBtn);
-
 
     todoList.appendChild(li);
 
